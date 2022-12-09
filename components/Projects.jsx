@@ -25,12 +25,12 @@ const Projects = () => {
             projectUrl="/crypto"
           />
           <ProjectItem
-            title="Netflix Clone"
+            title="Netflix UI"
             backgroundImg={NetflixImg}
             projectUrl="/netflix"
           />
           <ProjectItem
-            title="Twitch Clone"
+            title="Twitch UI"
             backgroundImg={TwitchImg}
             projectUrl="/twitch"
           />
