@@ -27,12 +27,12 @@ const Projects = () => {
           <ProjectItem
             title="Netflix Clone"
             backgroundImg={NetflixImg}
-            projectUrl="/property"
+            projectUrl="/netflix"
           />
           <ProjectItem
             title="Twitch Clone"
             backgroundImg={TwitchImg}
-            projectUrl="/property"
+            projectUrl="/twitch"
           />
         </div>
       </div>
