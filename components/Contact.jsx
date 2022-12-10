@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
@@ -9,6 +11,37 @@ import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import ContactImg from "../public/assets/contact.jpg";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_mk8vnrr",
+        "template_w1knqq8",
+        form.current,
+        "xiCbKAc7Q1_4SbxK4"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("message sent");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+  <form ref={form} onSubmit={sendEmail}>
+    <label>Name</label>
+    <input type="text" name="user_name" />
+    <label>Email</label>
+    <input type="email" name="user_email" />
+    <label>Message</label>
+    <textarea name="message" />
+    <input type="submit" value="Send" />
+  </form>;
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
