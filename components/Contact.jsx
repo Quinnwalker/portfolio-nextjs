@@ -38,6 +38,14 @@ const Contact = () => {
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]"></p>
         <h2 className="py-4">Get In Touch</h2>
+        <form ref={form} onSubmit={sendEmail}>
+          <label>Name</label>
+          <input type="text" name="user_name" />
+          <label>Email</label>
+          <input type="email" name="user_email" />
+          <label>Message</label>
+          <textarea name="message" />
+        </form>
 
         <div className="grid lg:grid-cols-5 gap-8">
           {/* left */}
@@ -89,7 +97,6 @@ const Contact = () => {
                       className="border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
                       name="user_name"
-                      placeholder="Your Name"
                     />
                   </div>
                   <div className="flex flex-col">
@@ -98,7 +105,6 @@ const Contact = () => {
                       className="border-2 rounded-lg p-3 flex border-gray-300"
                       type="email"
                       name="user_email"
-                      placeholder="Email Address"
                     />
                   </div>
                 </div>
@@ -107,7 +113,6 @@ const Contact = () => {
                   <input
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
-                    placeholder="Heyyy"
                   />
                 </div>
                 <div className="flex flex-col">
